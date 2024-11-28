@@ -27,6 +27,7 @@ from langchain_community.document_loaders.parsers.language.scala import ScalaSeg
 from langchain_community.document_loaders.parsers.language.typescript import (
     TypeScriptSegmenter,
 )
+from langchain_community.document_loaders.parsers.language.swift import SwiftSegmenter
 
 LANGUAGE_EXTENSIONS: Dict[str, str] = {
     "py": "python",
@@ -47,6 +48,7 @@ LANGUAGE_EXTENSIONS: Dict[str, str] = {
     "php": "php",
     "ex": "elixir",
     "exs": "elixir",
+    "sw": "swift",
 }
 
 LANGUAGE_SEGMENTERS: Dict[str, Any] = {
@@ -67,6 +69,7 @@ LANGUAGE_SEGMENTERS: Dict[str, Any] = {
     "java": JavaSegmenter,
     "php": PHPSegmenter,
     "elixir": ElixirSegmenter,
+    "swift": SwiftSegmenter,
 }
 
 Language = Literal[
@@ -94,6 +97,7 @@ Language = Literal[
     "lua",
     "perl",
     "elixir",
+    "swift",
 ]
 
 
@@ -123,6 +127,7 @@ class LanguageParser(BaseBlobParser):
     - Ruby: "ruby" (*)
     - Rust: "rust" (*)
     - Scala: "scala" (*)
+    - Swift: "swift" (*)
     - TypeScript: "ts" (*)
 
     Items marked with (*) require the packages `tree_sitter` and
